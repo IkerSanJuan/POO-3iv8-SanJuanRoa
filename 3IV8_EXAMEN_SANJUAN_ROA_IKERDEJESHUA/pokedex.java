@@ -5,9 +5,9 @@ class pokedex{
         int  idc=124;
         int idb=56;
         int ids=245;
-        int energíavitalc=500;
-        int energíavitalb=600;
-        int energíavitals=400;
+        int energíavitalc=50;
+        int energíavitalb=60;
+        int energíavitals=40;
         int opcion;
         int defensab=70;
         int defensac=65;
@@ -83,6 +83,7 @@ class pokedex{
                         System.out.println("PERSIONA 1 PARA CHARMANDER");
                         System.out.println("PERSIONA 2 PARA BULBASAOR");
                         System.out.println("PERSIONA 3 PARA SQUARTLE");
+                        //SE SELECCIONA PRIMER POKEMON
                         System.out.println("SELECCIONA EL 1ER POKEMON");
                         nombre=entrada.nextInt();
                         if (nombre<1){
@@ -92,6 +93,7 @@ class pokedex{
                             System.out.println("NUMERO NO VALIDO, POR FAVOR SELECCIONA OTRO POKEMON");
                         }
                         System.out.println("SELECCIONA EL 2DO POKEMON");
+                        //SE SELCCIONA EL SEGUNDO POKEMON
                         nombre2=entrada.nextInt();
                         if (nombre2<1){
                             System.out.println("NUMERO NO VALIDO, POR FAVOR SELECCIONA OTRO POKEMON");
@@ -99,7 +101,7 @@ class pokedex{
                         if (nombre2>3){
                             System.out.println("NUMERO NO VALIDO, POR FAVOR SELECCIONA OTRO POKEMON");
                         }
-
+                        //TE MUESTRA LOS DATOS DE TU PRIMER POKEMON
                         System.out.println("LOS DATOS DEL 1ER POKEMON: ");
                         if(nombre==1){
                             System.out.println("DATOS CHARMADER");
@@ -121,6 +123,7 @@ class pokedex{
                             System.out.println("DEFENSA: "+defensas);
                             impacto3=(fuerzas*defensas)/3;
                         }
+                        // TE MUESTRA LOS DATOS DEL SEGUNDO POKEMON
                         System.out.println("LOS DATOS DEL 2DO POKEMON: ");
                         if(nombre2==1){
                             System.out.println("DATOS CHARMADER");
@@ -142,18 +145,19 @@ class pokedex{
                             System.out.println("DEFENSA: "+defensas);
                             impacto3=(fuerzas*defensas)/3;
                         }
-                        switch(nombre){
+                        //ES DONDE SE DESAROLLA LA BATALLA
+                        switch(nombre & nombre2){
                             case 1 & 2:
-                                while(energíavitalc!=0){
-                                    energíavitalc=energíavitalc+impacto2;
-                                }
-                            break;
+                                System.out.println("CHARMANDER ESTA CANSADO");
+                                System.out.println("GANO BULBASAUR");
                             case 1 & 3:
-                                while(energíavitalc!=0){
-                                    energíavitalc=energíavitalc+impacto3;
-                                }
+                                System.out.println("SQUARTLE ESTA CANSADO");
+                                System.out.println("GANO CHARMANDER");
                             break;
-
+                            case 2 & 3:
+                                System.out.println("BULBASAUR ESTA CANSADO");
+                                System.out.println("GANO SQUARTLE");
+                                break;
                         }
                         System.out.println("Deseas volver a iniciar la Batalla Pokemon?, si lo deseas escriba r, de lo contrario ingrese cualquier tecla");
                         reinicio=entrada.next().charAt(0);
